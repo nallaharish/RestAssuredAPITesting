@@ -13,5 +13,7 @@ public class FileNameConstants {
 	public static final String TOKEN_API_REQUEST_BODY = BASE_PATH + "tokenapirequestbody.txt";
 	
 	public static final String PUT_API_REQUEST_BODY = BASE_PATH + "putapirequestbody.txt";
+	
+	public static final String PATCH_API_REQUEST_BODY = BASE_PATH + "patchapirequestbody.txt";
 
 }
