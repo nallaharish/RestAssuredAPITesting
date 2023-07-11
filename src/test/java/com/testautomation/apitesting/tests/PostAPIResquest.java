@@ -10,7 +10,7 @@ import io.restassured.response.Response;
 import net.minidev.json.JSONObject;
 
 
-public class POSTAPIResquest extends BaseTest{	
+public class PostAPIResquest extends BaseTest{	
 	
 	@Test
 	public void createBooking() {	

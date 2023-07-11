@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.testautomation.apitesting.tests.PostAPIRequestUsingPojos">
+      <class name="com.testautomation.apitesting.tests.PutAPIRequest">
         <methods>
-          <include name="postAPIRequest"/>
+          <include name="putAPIRequest"/>
         </methods>
-      </class> <!-- com.testautomation.apitesting.tests.PostAPIRequestUsingPojos -->
+      </class> <!-- com.testautomation.apitesting.tests.PutAPIRequest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
