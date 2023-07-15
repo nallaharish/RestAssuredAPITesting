@@ -4,12 +4,16 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
-import org.hamcrest.Matcher;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hamcrest.Matchers;
+
+import static org.hamcrest.Matchers.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.jayway.jsonpath.JsonPath;
+import com.testautomation.apitesting.listener.RestAssuredListner;
 import com.testautomation.apitesting.utils.BaseTest;
 import com.testautomation.apitesting.utils.FileNameConstants;
 
@@ -17,11 +21,13 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import net.minidev.json.JSONArray;
-
 public class EndToEndAPITest extends BaseTest{
 	
+	private static final Logger logger = LogManager.getLogger(EndToEndAPITest.class);
+	
 	@Test
-	public void patchAPIRequest() {
+	public void e2eAPIRequest() {
+		logger.info("e2eAPIRequest test execution started...");
 		
 		try {
 			String postAPIRequestBody = FileUtils.readFileToString(new File(FileNameConstants.POST_API_REQUEST_BODY),"UTF-8");
@@ -37,6 +43,7 @@ public class EndToEndAPITest extends BaseTest{
 			Response response =
 			RestAssured
 					.given()
+					//.filter(new RestAssuredListner())
 						.contentType(ContentType.JSON)
 						.body(postAPIRequestBody)
 						.baseUri("https://restful-booker.herokuapp.com/booking")
@@ -44,7 +51,7 @@ public class EndToEndAPITest extends BaseTest{
 						.post()
 					.then()
 						.assertThat()
-						.statusCode(200)
+						.statusCode(100)
 					.extract()
 						.response();
 			
@@ -133,7 +140,7 @@ public class EndToEndAPITest extends BaseTest{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		logger.info("e2eAPIRequest test execution ended...");
 	}
 
 }
