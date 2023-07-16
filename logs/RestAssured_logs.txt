@@ -333,3 +333,103 @@ Expected status code <100> but was <200>.
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 
+2023-07-16T21:30:32,894 [main] INFO  (RestAssuredListener.java:24) - 
+ Method ==> POST
+ URI ==> https://restful-booker.herokuapp.com/booking
+ Request body ==> {
+  "firstname" : "Harish Testing",
+  "lastname" : "Using JSON",
+  "additionalneeds" : "Car",
+  "totalprice" : 1000,
+  "depositpaid" : true,
+  "bookingdates" : {
+    "checkin" : "2023-03-25",
+    "checkout" : "2023-03-30"
+  }
+}
+ Request body ==> {
+  "firstname" : "Harish Testing",
+  "lastname" : "Using JSON",
+  "additionalneeds" : "Car",
+  "totalprice" : 1000,
+  "depositpaid" : true,
+  "bookingdates" : {
+    "checkin" : "2023-03-25",
+    "checkout" : "2023-03-30"
+  }
+}
+2023-07-16T21:30:34,255 [main] INFO  (RestAssuredListener.java:24) - 
+ Method ==> POST
+ URI ==> https://restful-booker.herokuapp.com/booking
+ Request body ==> {
+  "firstname" : "Harish Testing",
+  "lastname" : "Using JSON",
+  "additionalneeds" : "Trek",
+  "totalprice" : 1000,
+  "depositpaid" : true,
+  "bookingdates" : {
+    "checkin" : "2023-03-25",
+    "checkout" : "2023-03-30"
+  }
+}
+ Request body ==> {
+  "firstname" : "Harish Testing",
+  "lastname" : "Using JSON",
+  "additionalneeds" : "Trek",
+  "totalprice" : 1000,
+  "depositpaid" : true,
+  "bookingdates" : {
+    "checkin" : "2023-03-25",
+    "checkout" : "2023-03-30"
+  }
+}
+2023-07-16T21:30:35,443 [main] INFO  (RestAssuredListener.java:24) - 
+ Method ==> POST
+ URI ==> https://restful-booker.herokuapp.com/booking
+ Request body ==> {
+  "firstname" : "Harish Testing",
+  "lastname" : "Using JSON",
+  "additionalneeds" : "fuel",
+  "totalprice" : 1000,
+  "depositpaid" : true,
+  "bookingdates" : {
+    "checkin" : "2023-03-25",
+    "checkout" : "2023-03-30"
+  }
+}
+ Request body ==> {
+  "firstname" : "Harish Testing",
+  "lastname" : "Using JSON",
+  "additionalneeds" : "fuel",
+  "totalprice" : 1000,
+  "depositpaid" : true,
+  "bookingdates" : {
+    "checkin" : "2023-03-25",
+    "checkout" : "2023-03-30"
+  }
+}
+2023-07-16T21:30:36,593 [main] INFO  (RestAssuredListener.java:24) - 
+ Method ==> POST
+ URI ==> https://restful-booker.herokuapp.com/booking
+ Request body ==> {
+  "firstname" : "Harish Testing",
+  "lastname" : "Using JSON",
+  "additionalneeds" : "Travel",
+  "totalprice" : 1000,
+  "depositpaid" : true,
+  "bookingdates" : {
+    "checkin" : "2023-03-25",
+    "checkout" : "2023-03-30"
+  }
+}
+ Request body ==> {
+  "firstname" : "Harish Testing",
+  "lastname" : "Using JSON",
+  "additionalneeds" : "Travel",
+  "totalprice" : 1000,
+  "depositpaid" : true,
+  "bookingdates" : {
+    "checkin" : "2023-03-25",
+    "checkout" : "2023-03-30"
+  }
+}
