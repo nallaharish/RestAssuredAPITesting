@@ -17,6 +17,11 @@ import com.testautomation.apitesting.pojos.Booking;
 import com.testautomation.apitesting.pojos.BookingDates;
 import com.testautomation.apitesting.utils.FileNameConstants;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -24,6 +29,9 @@ import net.minidev.json.JSONArray;
 
 public class DataDrivenTestingUsingJSONFile {
 
+	@Story("Story 1")		
+	@Description("End to End Testing")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(dataProvider = "getTestData")
 	public void DataDrivenTestingusingJSON(HashMap<String, String> testdata) throws JsonProcessingException {
 		
@@ -38,6 +46,7 @@ public class DataDrivenTestingUsingJSONFile {
 					Response response = 
 					RestAssured
 					.given()
+					.filter(new AllureRestAssured())
 					.filter(new RestAssuredListener())
 						.contentType(ContentType.JSON)
 						.body(requestBody)
