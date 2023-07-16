@@ -1,5 +1,6 @@
 package com.testautomation.apitesting.tests;
 
+
 import java.io.File;
 import java.io.IOException;
 
@@ -7,8 +8,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hamcrest.Matchers;
-
-import static org.hamcrest.Matchers.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,16 +16,30 @@ import com.testautomation.apitesting.listener.RestAssuredListener;
 import com.testautomation.apitesting.utils.BaseTest;
 import com.testautomation.apitesting.utils.FileNameConstants;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import net.minidev.json.JSONArray;
-public class EndToEndAPITest extends BaseTest{
+
+@Epic("Epic-01")
+@Feature("Create Update Delete Booking")
+public class AllureReportGeneration extends BaseTest{
 	
-	private static final Logger logger = LogManager.getLogger(EndToEndAPITest.class);
+	private static final Logger logger = LogManager.getLogger(AllureReportGeneration.class);
 	
-	@Test
+	@Story("Story 1")	
+	@Test(description = "End to End API Testing")
+	@Description("End to End Testing")
+	@Severity(SeverityLevel.CRITICAL)
 	public void e2eAPIRequest() {
+		
 		logger.info("e2eAPIRequest test execution started...");
 		
 		try {
@@ -43,8 +56,8 @@ public class EndToEndAPITest extends BaseTest{
 			Response response =
 			RestAssured
 					.given()
-					
-					//.filter(new RestAssuredListner())
+					.filter(new AllureRestAssured())
+					.filter(new RestAssuredListener())
 						.contentType(ContentType.JSON)
 						.body(postAPIRequestBody)
 						.baseUri("https://restful-booker.herokuapp.com/booking")
@@ -67,6 +80,8 @@ public class EndToEndAPITest extends BaseTest{
 		//get api call
 		RestAssured
 				.given()
+				.filter(new AllureRestAssured())
+				.filter(new RestAssuredListener())
 					.contentType(ContentType.JSON)
 					.baseUri("https://restful-booker.herokuapp.com/booking")
 				.when()
@@ -79,6 +94,7 @@ public class EndToEndAPITest extends BaseTest{
 		Response tokenAPIResponse =
 		RestAssured
 				.given()
+				.filter(new AllureRestAssured())
 					.contentType(ContentType.JSON)
 					.body(tokenAPIRequestBody)
 					.baseUri("https://restful-booker.herokuapp.com/auth")
@@ -96,6 +112,8 @@ public class EndToEndAPITest extends BaseTest{
 		//put api call
 		RestAssured
 			.given()
+			.filter(new AllureRestAssured())
+			.filter(new RestAssuredListener())
 				.contentType(ContentType.JSON)
 				.body(putAPIRequestBody)
 				.header("Cookie", "token="+token)
@@ -112,6 +130,8 @@ public class EndToEndAPITest extends BaseTest{
 		//PATCH CALL
 		RestAssured
 		.given()
+		.filter(new AllureRestAssured())
+	.filter(new RestAssuredListener())
 		.contentType(ContentType.JSON)
 		.body(patchAPIRequestBody)
 		.header("Cookie", "token="+token)
@@ -127,6 +147,7 @@ public class EndToEndAPITest extends BaseTest{
 		//DELETE CALL
 				RestAssured
 				.given()
+				.filter(new RestAssuredListener())				
 				.contentType(ContentType.JSON)
 				.header("Cookie", "token="+token)
 				.baseUri("https://restful-booker.herokuapp.com/booking")
@@ -134,8 +155,7 @@ public class EndToEndAPITest extends BaseTest{
 				.delete("/{bookingId}",bookingId)
 				.then()
 				.assertThat()
-				.statusCode(201);
-				
+				.statusCode(201);				
 		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

@@ -5,6 +5,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Rest Assured API Testing</name>
 	<description>Rest Assured API Testing</description>
+	
+	<properties>
+		<aspectj.version>1.9.19</aspectj.version>
+	</properties>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -22,6 +27,10 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M1</version> <!--<version>3.7.0</version> -->
 				<configuration>
+					<!--<testFailureIgnore>true</testFailureIgnore>-->
+					<argLine>
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+					</argLine>
 					<suiteXmlFiles>
 						<suiteXmlFile>./suites/restAssuredAPITest.xml</suiteXmlFile>
 					</suiteXmlFiles>
@@ -36,8 +45,6 @@
 			<version>2.20.0</version>
 			<scope>test</scope>
 		</dependency>
-		
-
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
@@ -83,8 +90,36 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.8.0</version>
+			<version>7.4.0</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>2.17.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-rest-assured</artifactId>
+			<version>2.23.0</version>
+		</dependency>
+		
+        <dependency>
+          <groupId>org.aspectj</groupId>
+          <artifactId>aspectjweaver</artifactId>
+          <version>${aspectj.version}</version>
+        </dependency>
+      </dependencies>
+	<!--
+	<reporting>
+		<excludeDefaults>true</excludeDefaults>
+		<plugins>
+			<plugin>
+				<groupId>io.qameta.allure</groupId>
+				<artifactId>allure-maven</artifactId>
+				<version>2.10.0</version>
+			</plugin>
+		</plugins>
+	</reporting>-->
+	
 </project>

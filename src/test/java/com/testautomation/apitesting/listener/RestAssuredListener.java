@@ -11,8 +11,8 @@ import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.FilterableResponseSpecification;
 
-public class RestAssuredListner implements Filter{
-	private static final Logger logger = LogManager.getLogger(RestAssuredListner.class);
+public class RestAssuredListener implements Filter{
+	private static final Logger logger = LogManager.getLogger(RestAssuredListener.class);
 
 	@Override
 	public Response filter(FilterableRequestSpecification requestSpec, FilterableResponseSpecification responseSpec,
