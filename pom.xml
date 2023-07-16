@@ -32,7 +32,8 @@
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
 					<suiteXmlFiles>
-						<suiteXmlFile>./suites/restAssuredAPITest.xml</suiteXmlFile>
+						<suiteXmlFile>./suites/AllureAPITest.xml</suiteXmlFile>
+						<!--<suiteXmlFile>${suitefilename}</suiteXmlFile>-->
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

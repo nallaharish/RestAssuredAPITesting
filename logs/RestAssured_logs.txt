@@ -1,0 +1,174 @@
+2023-07-16T19:58:17,002 [main] INFO  (EndToEndAPITest.java:30) - e2eAPIRequest test execution started...
+2023-07-16T19:58:29,206 [main] INFO  (EndToEndAPITest.java:144) - e2eAPIRequest test execution ended...
+2023-07-16T20:09:48,459 [main] INFO  (EndToEndAPITest.java:30) - e2eAPIRequest test execution started...
+2023-07-16T20:10:00,381 [main] INFO  (EndToEndAPITest.java:144) - e2eAPIRequest test execution ended...
+2023-07-16T20:11:13,931 [main] INFO  (EndToEndAPITest.java:30) - e2eAPIRequest test execution started...
+2023-07-16T20:11:25,300 [main] INFO  (EndToEndAPITest.java:144) - e2eAPIRequest test execution ended...
+2023-07-16T20:12:52,849 [main] INFO  (EndToEndAPITest.java:30) - e2eAPIRequest test execution started...
+2023-07-16T20:13:03,326 [main] INFO  (EndToEndAPITest.java:144) - e2eAPIRequest test execution ended...
+2023-07-16T20:15:01,285 [main] INFO  (EndToEndAPITest.java:30) - e2eAPIRequest test execution started...
+2023-07-16T20:15:12,172 [main] INFO  (EndToEndAPITest.java:144) - e2eAPIRequest test execution ended...
+2023-07-16T20:16:52,622 [main] INFO  (AllureReportGeneration.java:43) - e2eAPIRequest test execution started...
+2023-07-16T20:16:56,835 [main] INFO  (RestAssuredListener.java:24) - 
+ Method ==> POST
+ URI ==> https://restful-booker.herokuapp.com/booking
+ Request body ==> {
+    "firstname": "Harish",
+    "lastname": "Kumar",
+    "totalprice": 1000,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2023-01-01",
+        "checkout": "2023-02-02"
+    },
+    "additionalneeds": "Travel"
+}
+ Request body ==> {
+    "firstname": "Harish",
+    "lastname": "Kumar",
+    "totalprice": 1000,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2023-01-01",
+        "checkout": "2023-02-02"
+    },
+    "additionalneeds": "Travel"
+}
+2023-07-16T20:16:56,992 [main] INFO  (BaseTest.java:30) - java.lang.AssertionError: 1 expectation failed.
+Expected status code <100> but was <200>.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$1.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at com.testautomation.apitesting.tests.AllureReportGeneration.e2eAPIRequest(AllureReportGeneration.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+2023-07-16T20:18:41,973 [main] INFO  (EndToEndAPITest.java:30) - e2eAPIRequest test execution started...
+2023-07-16T20:18:53,144 [main] INFO  (EndToEndAPITest.java:144) - e2eAPIRequest test execution ended...
+2023-07-16T20:28:20,053 [main] INFO  (EndToEndAPITest.java:30) - e2eAPIRequest test execution started...
+2023-07-16T20:28:31,579 [main] INFO  (EndToEndAPITest.java:144) - e2eAPIRequest test execution ended...
+2023-07-16T20:37:28,160 [main] INFO  (AllureReportGeneration.java:43) - e2eAPIRequest test execution started...
+2023-07-16T20:37:32,602 [main] INFO  (RestAssuredListener.java:24) - 
+ Method ==> POST
+ URI ==> https://restful-booker.herokuapp.com/booking
+ Request body ==> {
+    "firstname": "Harish",
+    "lastname": "Kumar",
+    "totalprice": 1000,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2023-01-01",
+        "checkout": "2023-02-02"
+    },
+    "additionalneeds": "Travel"
+}
+ Request body ==> {
+    "firstname": "Harish",
+    "lastname": "Kumar",
+    "totalprice": 1000,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2023-01-01",
+        "checkout": "2023-02-02"
+    },
+    "additionalneeds": "Travel"
+}
+2023-07-16T20:37:34,089 [main] INFO  (RestAssuredListener.java:24) - 
+ Method ==> GET
+ URI ==> https://restful-booker.herokuapp.com/booking/6268
+ Request body ==> null
+ Request body ==> null
+2023-07-16T20:37:34,094 [main] INFO  (AllureReportGeneration.java:92) - e2eAPIRequest GET API test execution started...
+2023-07-16T20:37:34,096 [main] INFO  (AllureReportGeneration.java:93) - e2eAPIRequest GET API test execution Ended...
+2023-07-16T20:37:36,505 [main] INFO  (RestAssuredListener.java:24) - 
+ Method ==> PUT
+ URI ==> https://restful-booker.herokuapp.com/booking/6268
+ Request body ==> {
+    "firstname": "HarishN",
+    "lastname": "KumarN",
+    "totalprice": 1000,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2018-01-01",
+        "checkout": "2019-01-01"
+    },
+    "additionalneeds": "Travel"
+}
+ Request body ==> {
+    "firstname": "HarishN",
+    "lastname": "KumarN",
+    "totalprice": 1000,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2018-01-01",
+        "checkout": "2019-01-01"
+    },
+    "additionalneeds": "Travel"
+}
+2023-07-16T20:37:39,181 [main] INFO  (RestAssuredListener.java:24) - 
+ Method ==> PATCH
+ URI ==> https://restful-booker.herokuapp.com/booking/6268
+ Request body ==> {
+    "firstname": "Hari Ram"
+}
+ Request body ==> {
+    "firstname": "Hari Ram"
+}
+2023-07-16T20:37:40,370 [main] INFO  (RestAssuredListener.java:24) - 
+ Method ==> DELETE
+ URI ==> https://restful-booker.herokuapp.com/booking/6268
+ Request body ==> null
+ Request body ==> null
+2023-07-16T20:37:40,373 [main] INFO  (AllureReportGeneration.java:166) - e2eAPIRequest test execution ended...

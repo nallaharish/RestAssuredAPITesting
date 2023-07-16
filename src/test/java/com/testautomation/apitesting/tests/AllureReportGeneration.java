@@ -89,6 +89,8 @@ public class AllureReportGeneration extends BaseTest{
 				.then()
 					.assertThat()
 					.statusCode(200);
+		logger.info("e2eAPIRequest GET API test execution started...");
+		logger.info("e2eAPIRequest GET API test execution Ended...");
 		
 		//token generation
 		Response tokenAPIResponse =
