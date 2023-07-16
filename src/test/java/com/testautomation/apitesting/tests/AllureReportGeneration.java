@@ -165,5 +165,76 @@ public class AllureReportGeneration extends BaseTest{
 		}
 		logger.info("e2eAPIRequest test execution ended...");
 	}
+	
+	
+
+	@Story("Story 2")	
+	@Test(description = "End to End API Testing Test2")
+	@Description("End to End Testing Test2")
+	@Severity(SeverityLevel.CRITICAL)
+	public void e2eAPIRequest2() {
+		
+		logger.info("e2eAPIRequest test execution started...");
+		
+		try {
+			String postAPIRequestBody = FileUtils.readFileToString(new File(FileNameConstants.POST_API_REQUEST_BODY),"UTF-8");
+		
+			String tokenAPIRequestBody = FileUtils.readFileToString(new File(FileNameConstants.TOKEN_API_REQUEST_BODY),"UTF-8");
+			
+			String putAPIRequestBody = FileUtils.readFileToString(new File(FileNameConstants.PUT_API_REQUEST_BODY),"UTF-8");
+		
+			String patchAPIRequestBody = FileUtils.readFileToString(new File(FileNameConstants.PATCH_API_REQUEST_BODY),"UTF-8");
+			
+			
+			//post api call
+			Response response =
+			RestAssured
+					.given()
+					.filter(new AllureRestAssured())
+					.filter(new RestAssuredListener())
+						.contentType(ContentType.JSON)
+						.body(postAPIRequestBody)
+						.baseUri("https://restful-booker.herokuapp.com/booking")
+					.when()
+						.post()
+					.then()
+						.assertThat()
+						.statusCode(200)
+					.extract()
+						.response();
+			
+		JSONArray jsonArray = JsonPath.read(response.body().asString(),"$.booking..firstname");
+		String firstName = (String) jsonArray.get(0);
+		
+		Assert.assertEquals(firstName, "Harish");
+		
+		int bookingId = JsonPath.read(response.body().asString(),"$.bookingid");
+		System.out.println("Booking Id : " + bookingId);
+		
+		//get api call
+		RestAssured
+				.given()
+				.filter(new AllureRestAssured())
+				.filter(new RestAssuredListener())
+					.contentType(ContentType.JSON)
+					.baseUri("https://restful-booker.herokuapp.com/booking")
+				.when()
+					.get("/{bookingId}",bookingId)
+				.then()
+					.assertThat()
+					.statusCode(200);
+		logger.info("e2eAPIRequest GET API test execution started...");
+		logger.info("e2eAPIRequest GET API test execution Ended...");
+
+
+
+		
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		logger.info("e2eAPIRequest test execution ended...");
+	}
 
 }
